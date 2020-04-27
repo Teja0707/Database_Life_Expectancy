@@ -2,92 +2,42 @@
 
 
  <div class="container">
-     <header class="jumbotron">
-         <div class="container">
-             <h1>Life Expectancy Database</h1>
-             <p>Search for Life expectancy at different countries</p>
-             <p>
-                <a class="btn btn-primary btn-large" href="/life_expectancies/new">Search DB</a>
-             </p>
-         </div>
-     </header>
-	 
-	 
-	  <!-- dims: {
-                         COUNTRY: "Afghanistan",
-                         GHO: "Healthy life expectancy (HALE) at birth (years)",
-                         SEX: "Both sexes",
-                         YEAR: "2016"
-                        },
-               Value: "53.0" -->
-	 
-	 
+	 <header class="jumbotron">
+		 <div class="container">
+			 <h1>Life Expectancy Database</h1>
+			 <p>Search for Life expectancy at different countries</p>
+			 <p>
+				<a class="btn btn-primary btn-large" href="/life_expectancies/new">Search DB</a>
+			 </p>
+		 </div>
+	 </header>
 	 <div>
 	 <table class="table">
 	<thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">COUNTRY</th>
-      <th scope="col">GHO</th>
-      <th scope="col">SEX</th>
+	<tr>
+	  <th scope="col">#</th>
+	  <th scope="col">COUNTRY</th>
+	  <th scope="col">GHO</th>
+	  <th scope="col">SEX</th>
 	  <th scope="col">YEAR</th>
 	  <th scope="col">VALUE</th>
-    </tr>
+	</tr>
   </thead>
 	<% for(var i=1; i < Life_expectancies.length; i++) { %>
 	<tbody>
-    <tr>
-      <th scope="row"><%= i %></th>
-      <td><%= Life_expectancies[i].dims.COUNTRY %></td>
-      <td><%= Life_expectancies[i].dims.GHO %></td>
-      <td><%= Life_expectancies[i].dims.SEX %></td>
+	<tr>
+	  <th scope="row"><%= i %></th>
+	  <td><%= Life_expectancies[i].dims.COUNTRY %></td>
+	  <td><%= Life_expectancies[i].dims.GHO %></td>
+	  <td><%= Life_expectancies[i].dims.SEX %></td>
 	  <td><%= Life_expectancies[i].dims.YEAR %></td>
 	   <td><%= Life_expectancies[i].Value %></td>
-    </tr>
+	</tr>
   </tbody>
   <% } %>
 </table>
 </div>
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-	 
-     
-     <!-- <div class="row text-center" style="display:flex; flex-wrap: wrap;">
-        <% Life_expectancies.forEach(function(life_expectancy){ %>
-		  
-		
-		
-            <div class="col-md-4 col-sm-6">
-				
-			
-              <div class="thumbnail">
-				
-				
-			<h4><label>Country</label> :	<%= life_expectancy.dims.COUNTRY %></h4>
-			<h4><label>GHO</label> :	<%= life_expectancy.dims.GHO %></h4>
-			<h4><label>Sex</label> :	<%= life_expectancy.dims.SEX %></h4>
-			<h4><label>Year</label> :	<%= life_expectancy.dims.YEAR %></h4>
-					<hr></hr>
-			
-					  
-                   <div class="caption">
-                       <h4><label>Value</label> :	<%= life_expectancy.Value %></h4>
-					   
-                   </div>
-                </div>
-            </div>
-        <% }); %> -->
-    </div>
+
+	</div>
 </div>
 <%- include("partials/footer") %>
