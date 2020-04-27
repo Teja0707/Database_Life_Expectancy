@@ -1,0 +1,29 @@
+{
+  "name": "bioinformatics_project",
+  "version": "1.0.0",
+  "description": "This project \"Life Expectancy Database\" is built for querying (and analyzing) Life Expectancies(LE) of male,female (or both), across different countries.This DB consists of LE data from year 2000-2016 of around 193 countries and is takenfrom World Health Organization.",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Teja0707/Life_Expectancy_Database-.git"
+  },
+  "keywords": [
+    "GHO",
+    "HALE"
+  ],
+  "author": "Teja Sirivolu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Teja0707/Life_Expectancy_Database-/issues"
+  },
+  "homepage": "https://github.com/Teja0707/Life_Expectancy_Database-#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.2",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.10"
+  }
+}
