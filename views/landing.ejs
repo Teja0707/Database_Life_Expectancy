@@ -1,14 +1,665 @@
 
 <%- include("partials/header") %>
 
+<div class = "container">
+	
 
-<h1> Bio-informatics Project </h1>
+<h1> Bio-informatics Project : Life-Expectancy Database</h1>
 
-<h3>
-	 Life-Expectancy Database
-</h3>
+  <br/><br/><br/>
 
-<a href = "/life_expectancies">View all life expectancies</a>
+	<a href = "/life_expectancies"><button type="button" class="btn btn-primary btn-lg btn-block">Search and compare life expectancy across globe</button></a>
+
+	<br/><br/><br/>
+	
+	<!-- ----------------------------------------------------------------------- -->
+	
+	
+	
+
+
+<h1> Research </h1>
+
+
+
+<div class = "container">
+	
+	
+	
+	<ol class="list-group list-group-flush">
+
+		<li class="list-group-item">
+			
+			<p> <label>Research question/goal</label><br/>
+			
+			The goal of this database is to analyze and infer whether the life expectancy of developed/developing countries improving/deteriorating over the years. To achieve this, we compare life expectancy values of countries from years 2000-2016 among developed and developing countries. While comparing we consider life expectancies of both sexes- male and female together and also separately.<br/>
+	  </p>
+			
+		</li>
+		
+		<!-- -----------------------------------------------------------------------
+ -->
+ <li class="list-group-item">
+	 
+	 <p><label>Objective.</label>
+	 <br/>
+		 
+	
+	 
+	 <ul> <li>Compare life expectancy values of developed (USA, Canada, UK etc.) and developing(India, Pakistan, Bangladesh, etc.) countries from 2000-2016 and infer from data if life-expectancies are improving or deteriorating.</li><br/>
+	 <li>Compare life expectancy of male and female (together and separately) and infer from data which sex has better life-expectancy across.</li> </ul>
+
+	 
+		</p>
+	</li>
+	 
+  
+ <li class="list-group-item">
+	 <p><label>Country with minimum life expectancy</label>
+	 <br/>done.
+	 </p></li>
+
+  <li class="list-group-item">
+	  
+	  <p>
+		   <label>What is the life expectancy of India in the year 2015.</label>
+	  <br/> db.life_expectancy.find({$and :[{"dims.COUNTRY":"India"},{"dims.YEAR":"2015"}]})
+	  </p></li>
+
+  <li class="list-group-item"><p>
+	  <b><label>Total number of records in the database</label></b>
+	  <br/>db.life_expectancies.find({}).count()<br/>
+	  </p></li>
+
+	<li class="list-group-item"><p>
+		<b><label>Compare life expectancy of male and female in USA in 2000;2016.</label></b><br/>
+		db.life_expectancy.find({$and :[{"dim.COUNTRY":"India"},{"dim.YEAR":"2015"},{"dim.YEAR":"2015"}]})
+		</p></li>
+	
+	<li class="list-group-item"><p>
+		<b><label>Compare Healthy life expectancy (HALE) at birth (years) and Healthy life expectancy (HALE) at age 60 (years) of Female from Indonesia in the year 2010.</label></b><br/>
+		
+		db.life_expectancies.find({$and :[{$or :[{"dims.GHO":" Healthy life expectancy (HALE) at birth
+ (years)"},{"dims.GHO" : "Healthy life expectancy (HALE) at age 60 (years)"}]},{"dims.YEAR":"2010"},{"dims.COUNTRY":"Indonesia"}]).pretty() <br/>
+	
+	
+		</p></li>
+	<li class="list-group-item"><p>
+		
+		<b><label>What are the countries whose male life expectancy was less than 25 in 2000.</label></b>
+		<br/>done.<br/>
+		db.life_expectancies.find({$and :[{"dims.SEX": "Male"},{"Value" : {$lt : "25"}}]}).pretty() <br/>
+		
+		</p></li>
+		
+		
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of Afghanistan.</label></p><br/>
+			
+					
+		 <div class="container">
+		
+      <img  src="https://i.ibb.co/Nm4FB2s/afg-female.png" alt="afg-female" width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img src="https://i.ibb.co/M1c9QFq/afg-male.png" alt="afg-male"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img src="https://i.ibb.co/mFFMMb4/afg-both.png" alt="afg-both"     width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of Bangladesh.</label></p><br/>
+			
+			
+		
+		
+		 <div class="container">
+		
+      <img src="https://i.ibb.co/v1ZzD49/bangladesh-female.png" alt="bangladesh-female" width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img  src="https://i.ibb.co/c14Qsq0/bangladesh-male.png" alt="bangladesh-male"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img  src="https://i.ibb.co/WPsWcfj/bangladesh-both.png" alt="bangladesh-both"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of Bhutan.</label></p><br/>
+			
+   
+  
+		 <div class="container">
+		
+      <img src="https://i.ibb.co/PrGCJYs/bhutan-female.png" alt="bhutan-female" alt="srilanka-female" width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img  src="https://i.ibb.co/sHMS23f/bhutan-male.png" alt="bhutan-male" width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img src="https://i.ibb.co/q1CNxRn/bhutan-both.png" alt="bhutan-both"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of India.</label></p><br/>
+									
+		
+		
+		 <div class="container">
+		
+      <img src="https://i.ibb.co/FJKKVyL/india-female.png" alt="india-female" width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img src="https://i.ibb.co/8X8nR1h/india-male.png" alt="india-male" width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img src="https://i.ibb.co/vv6sNZr/india-both.png" alt="india-both"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of Maldives.</label></p><br/>
+			
+				
+		 <div class="container">
+		
+      <img src="https://i.ibb.co/W2vrYsJ/maldives-female.png" alt="maldives-female" width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img src="https://i.ibb.co/X8y5vnF/maldives-male.png" alt="maldives-male" width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img src="https://i.ibb.co/dLzRYgn/maldives-both.png" alt="maldives-both"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of Nepal.</label></p><br/>
+			
+			 		
+		 <div class="container">
+		
+      <img src="https://i.ibb.co/yBRcLRd/nepal-female.png" alt="nepal-female" width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img src="https://i.ibb.co/fGBcfMP/nepal-male.png" alt="nepal-male" width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img src="https://i.ibb.co/Vxdn73N/nepal-both.png" alt="nepal-both"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of Pakistan.</label></p><br/>
+		
+		
+		 <div class="container">
+		
+      <img src="https://i.ibb.co/n1rLLw5/pak-female.png" alt="pak-female" width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img src="https://i.ibb.co/5T7bySj/pak-male.png" alt="pak-male" width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img src="https://i.ibb.co/cNQvd4g/pak-both.png" alt="pak-both"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of Sri Lanka.</label></p><br/>
+			
+						
+		
+		
+		 <div class="container">
+		
+      <img src="https://i.ibb.co/mFqCTsj/srilanka-female.png" alt="srilanka-female" width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img src="https://i.ibb.co/thhgTjd/srilanka-male.png" alt="male" width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img src="https://i.ibb.co/vLnqWcn/srilanka-both.png" alt="srilanka-both"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	
+	
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of Canada.</label></p><br/>
+			
+		
+					
+		 <div class="container">
+		
+      <img  src="https://i.ibb.co/VMM2YJD/Canada-female.png" alt="Canada-female"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img src="https://i.ibb.co/wQwcKJW/canada-male.png" alt="canada-male"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img  src="https://i.ibb.co/9py0yXQ/canada-both.png" alt="canada-both"    width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of France.</label></p><br/>
+			
+		
+			
+		 <div class="container">
+		
+      <img  src="https://i.ibb.co/bNG0w46/france-female.png" alt="france-female"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img  src="https://i.ibb.co/W2TmKqm/france-male.png" alt="france-male" width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img src="https://i.ibb.co/7rp27gc/france-both.png" alt="france-both"     width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of Germany.</label></p><br/>
+		
+					
+		 <div class="container">
+		
+      <img   src="https://i.ibb.co/vxtZjzZ/germany-female.png" alt="germany-female"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img  src="https://i.ibb.co/YNnD3h1/germany-male.png" alt="germany-male"    width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img src="https://i.ibb.co/yyZY29d/germany-both.png" alt="germany-both"     width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of Italy.</label></p><br/>
+			
+		
+		 <div class="container">
+		
+      <img  src="https://i.ibb.co/7zFvX7W/italy-female.png" alt="italy-female" width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img  src="https://i.ibb.co/nmCtVWq/italy-male.png" alt="italy-male"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img   src="https://i.ibb.co/dGq4DsK/italy-both.png" alt="italy-both"        width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of Japan.</label></p><br/>
+		
+
+		 <div class="container">
+		
+      <img  src="https://i.ibb.co/f1cmX2X/japan-female.png" alt="japan-female" width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img  src="https://i.ibb.co/n1yBLBJ/japan-male.png" alt="japan-male"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img src="https://i.ibb.co/xjkp75q/japan-both.png" alt="japan-both"    width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of the United Kingdom .</label></p><br/>
+			
+	
+		 <div class="container">
+		
+      <img  src="https://i.ibb.co/Bn9PfzK/uk-female.png" alt="uk-female"    width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img src="https://i.ibb.co/QXY9dP1/uk-male.png" alt="uk-male"    width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img   src="https://i.ibb.co/sPWp5dW/uk-both.png" alt="uk-both"      width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of United States of America.</label></p><br/>
+			
+	  
+
+		 <div class="container">
+		
+      <img   src="https://i.ibb.co/j6B9qnG/usa-female.png" alt="usa-female"    width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img  src="https://i.ibb.co/F72ZmTM/usa-male.png" alt="usa-male"   width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img  src="https://i.ibb.co/JzpZySC/usa-both.png" alt="usa-both"       width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	
+	
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of Iran.</label></p><br/>
+			
+		
+		 <div class="container">
+		
+      <img  src="https://i.ibb.co/tcMHQn8/iran-female.png" alt="iran-female" width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img src="https://i.ibb.co/1f9TxRN/iran-male.png" alt="iran-male"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img  src="https://i.ibb.co/gRvdFpm/iran-both.png" alt="iran-both"        width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of Iraq.</label></p><br/>
+			
+  
+
+		 <div class="container">
+		
+      <img  src="https://i.ibb.co/3zQ3sy8/iraq-female.png" alt="iraq-female"    width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img  src="https://i.ibb.co/x2q1vwp/iraq-male.png" alt="iraq-male"    width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img src="https://i.ibb.co/DG0Kjvq/iraq-both.png" alt="iraq-both"       width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of Saudi Arabia.</label></p><br/>
+	
+		 <div class="container">
+		
+      <img   src="https://i.ibb.co/JqSs61C/saudi-female.png" alt="saudi-female"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img  src="https://i.ibb.co/XsC9wgw/saudi-male.png" alt="saudi-male"   width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img  src="https://i.ibb.co/kJXcYMY/saudi-both.png" alt="saudi-both"      width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	<!-- ----------------------------------------------------------------------	 -->
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of Syria.</label></p><br/>
+			
+	  
+
+		 <div class="container">
+		
+      <img   src="https://i.ibb.co/v1pCHRx/syria-female.png" alt="syria-female"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img  src="https://i.ibb.co/nnTd8K0/syria-male.png" alt="syria-male"   width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img  src="https://i.ibb.co/ZHpfg77/syria-both.png" alt="syria-both"     width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+	<!-- -------------------------------------------------------------------
+		 -->
+	
+	
+	
+	<li class="list-group-item"><p>
+		<label>What was the average life expectancy of SAARC(Afghanistan, Bangladesh, Bhutan, India, the Maldives, Nepal, Pakistan and Sri Lanka) countries by 2005.</label>
+		</p></li>
+	
+	<li class="list-group-item"><p>
+		<label>What is the average life expectancy of G7(Canada, France, Germany, Italy, Japan, the United Kingdom and the United States) countries by 2016.</label>
+		</p></li>
+		
+
+
+	<a href = "/life_expectancies">Back</a>
+</ol>
+</div>
+
+
+
+	
+
 
 <%- include("partials/footer") %>
 

@@ -1,0 +1,127 @@
+<%- include("partials/header") %>
+
+
+<h1> Queries </h1>
+
+
+
+<div class = "container">
+	
+	
+	
+	<ol class="list-group list-group-flush">
+
+		<li class="list-group-item">
+			
+			<p> <label>Are life expectancies of countries increasing over the years ?</label><br/>
+			
+			done.<br/>
+
+  			// select a country, sort by year, compare life expectancies <br/>
+  
+  			// Query : "life_expectancy.find({$and:[{"dims.COUNTRY":"Afghanistan"},{"dims.GHO":"Healthy life expectancy (HALE) at birth (years)"}]})).sort( { "dims.YEAR": 1 } )"<br/>
+	  
+	  </p>
+		
+			
+		</li>
+
+ <li class="list-group-item">
+	 
+	 <p><label>Country with maximum life expectancy in both sexes.</label>
+	 <br/>done.
+	 </p></li>
+	 
+  
+ <li class="list-group-item">
+	 <p><label>Country with minimum life expectancy</label>
+	 <br/>done.
+	 </p></li>
+
+  <li class="list-group-item">
+	  
+	  <p>
+		   <label>What is the life expectancy of India in the year 2015.</label>
+	  <br/> db.life_expectancy.find({$and :[{"dims.COUNTRY":"India"},{"dims.YEAR":"2015"}]})
+	  </p></li>
+
+  <li class="list-group-item"><p>
+	  <b><label>Total number of records in the database</label></b>
+	  <br/>db.life_expectancies.find({}).count()<br/>
+	  </p></li>
+
+	<li class="list-group-item"><p>
+		<b><label>Compare life expectancy of male and female in USA in 2000;2016.</label></b><br/>
+		db.life_expectancy.find({$and :[{"dim.COUNTRY":"India"},{"dim.YEAR":"2015"},{"dim.YEAR":"2015"}]})
+		</p></li>
+	
+	<li class="list-group-item"><p>
+		<b><label>Compare Healthy life expectancy (HALE) at birth (years) and Healthy life expectancy (HALE) at age 60 (years) of Female from Indonesia in the year 2010.</label></b><br/>
+		
+		db.life_expectancies.find({$and :[{$or :[{"dims.GHO":" Healthy life expectancy (HALE) at birth
+ (years)"},{"dims.GHO" : "Healthy life expectancy (HALE) at age 60 (years)"}]},{"dims.YEAR":"2010"},{"dims.COUNTRY":"Indonesia"}]).pretty() <br/>
+	
+	
+		</p></li>
+	<li class="list-group-item"><p>
+		
+		<b><label>What are the countries whose male life expectancy was less than 25 in 2000.</label></b>
+		<br/>done.<br/>
+		db.life_expectancies.find({$and :[{"dims.SEX": "Male"},{"Value" : {$lt : "25"}}]}).pretty() <br/>
+		
+		</p></li>
+		
+		
+		
+			
+		<li class="list-group-item"><p>
+			<label>life expectancy of Sri Lanka.</label></p><br/>
+		
+		
+		 <div class="container">
+		
+      <img src="https://i.ibb.co/mFqCTsj/srilanka-female.png" alt="srilanka-female" width = "80%" height="110" style="border:1px solid black">
+    </div>
+			
+			
+			<br/><br/>
+    <div class="container">
+      <img src="https://i.ibb.co/thhgTjd/srilanka-male.png" alt="male" width = "80%" height="110" style="border:1px solid black">
+    </div>
+   
+			<br/><br/>
+	<div class="container">
+	
+      <img src="https://i.ibb.co/vLnqWcn/srilanka-both.png" alt="srilanka-both"  width = "80%" height="110" style="border:1px solid black">
+    </div>
+ 
+		</li>
+		
+		
+		
+		
+		
+		
+		
+	
+	<li class="list-group-item"><p>
+		<label>What was the average life expectancy of SAARC(Afghanistan, Bangladesh, Bhutan, India, the Maldives, Nepal, Pakistan and Sri Lanka) countries by 2005.</label>
+		</p></li>
+	
+	<li class="list-group-item"><p>
+		<label>What is the average life expectancy of G7(Canada, France, Germany, Italy, Japan, the United Kingdom and the United States) countries by 2016.</label>
+		</p></li>
+		
+
+		
+		
+		
+		
+		
+	
+	<a href = "/life_expectancies">Back</a>
+</ol>
+</div>
+
+
+<%- include("partials/footer") %>
