@@ -82,26 +82,9 @@ app.get("/",function(req,res){
 
 // Get data from DB
 // Perform queries : ex : life_expectancy.find({"dims.YEAR":"2016"})
+// {$and:[{"dims.COUNTRY":"Bhutan"},{"dims.GHO":"Healthy life expectancy (HALE) at birth (years)"},{"dims.SEX":"Female"}]}
+
 app.get("/life_expectancies", function(req,res){
-	
-	//find( { <query> } ).max( { age: 100 } ).hint( { age: 1 } )
-	// $max:"$Value"
-	//{"dims.COUNTRY":"Srilanka"}
-	// {$and:[{"dims.COUNTRY":"Bhutan"},{"dims.GHO":"Healthy life expectancy (HALE) at birth (years)"},{"dims.SEX":"Female"}]}
-	// {"dims.COUNTRY":"Canada"},
-	
-	// {$and:[{"dims.COUNTRY":"Iran (Islamic Republic of)"},{"dims.GHO":"Healthy life expectancy (HALE) at birth (years)"},{"dims.SEX":"Both sexes"}]
-	
-	// United States of America
-	// United Kingdom of Great Britain and Northern Ireland
-	// Germany
-	// Italy
-	// Japan
-	// France
-	//{"dims.COUNTRY":"India"},
-	// Syrian Arab Republic
-	// Iran (Islamic Republic of)
-	// Saudi Arabia
 	
 	life_expectancy.find({},function(err,Life_expectancyDB){
 	if(err){
