@@ -63,8 +63,8 @@ What's in files ?
 
 ----- Views directory --------------
 
-2. "/life_expectancies" : Renders results for search
-3. "/landing" : Talks about research project, research question and results
+2. "/life_expectancies" : Renders results for search query
+3. "/landing" : Talks about research project, research question and results (First page)
 4. "/new" : Used to "Perfom Query" operations
 
 Example use :
@@ -75,7 +75,10 @@ dims: {
                          YEAR: "2016"
                         },
                Value: "53.0"
+
 To search value in perform query (/"new")
+Result is displayed in "/life_expectancies"
+
 
 
 
