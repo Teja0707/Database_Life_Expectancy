@@ -20,6 +20,18 @@ Step III. Get Data to database
 1.Download "data.json" file
 2.Use command "mongoimport --db dbName --collection collectionName --file fileName.json"
   to import data to local machine
+3.use command " echo 'mongod --nojournal' > mongod // to echo mongod
+4.chmod a+x mongod // give permissions
+5.run command ./mongod ..................... Starts DB 
+	(To run project skip 6; go to Step IV)
+	(To query on local machine follow 6.)
+6.Open new terminal .......Use command "cd Bioinformatics_Project" to get into the project directory
+7.Run command "mongo" to query locally
+8.Mongo commands :
+"show dbs : shows all existing databases"
+"use dbname" : makes required database available
+"show collections" : displays all collections
+9. To query locally use command : db.collections.find({}).pretty(); 
 
 
 Step IV : Install dependencies
@@ -91,5 +103,36 @@ Result is displayed in "/life_expectancies"
 	Number of countries : 183
 	Source : World health organization
 	
+
+--------------------------------------------------------------------------------------------------------
+
+
+Languages :
+
+Backend : NODE JS, MONGO, EXPRESS
+Front end : HTML, CSS, JAVASCRIPT, BOOTSTRAP
+Dependencies : body-parser: 1.19.0,ejs: 3.1.2, express: 4.17.1,mongoose: 5.9.10
+
 	
+--------------------------------------------------------------------------------------------------------
+
+Sample Queries (@backend):
+
+What is the life expectancy of India in the year 2015.
+db.life_expectancy.find({$and :[{"dims.COUNTRY":"India"},{"dims.YEAR":"2015"}]})
+ 
+
+Total number of records in the database
+life_expectancies.find({}).count()
+
+
+	
+Compare Healthy life expectancy (HALE) at birth (years) and Healthy life expectancy (HALE) at age 60 (years) of Female from Indonesia in the year 2010.
+db.life_expectancies.find({$and :[{$or :[{"dims.GHO":" Healthy life expectancy (HALE) at birth
+ (years)"},{"dims.GHO" : "Healthy life expectancy (HALE) at age 60 (years)"}]},{"dims.YEAR":"2010"},{"dims.COUNTRY":"Indonesia"}]).pretty() 
+	
+	
+What are the countries whose male life expectancy was less than 50 in 2000.		
+db.life_expectancies.find({$and :[{"dims.YEAR": "2000"},{"dims.SEX": "Male"},{"Value" : {$lt : "50"}}]}).pretty() 
+		
 --------------------------------------------------------------------------------------------------------

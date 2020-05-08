@@ -65,44 +65,16 @@
 		</p></li>
 	<li class="list-group-item"><p>
 		
-		<b><label>What are the countries whose male life expectancy was less than 25 in 2000.</label></b>
+		<b><label>What are the countries whose male life expectancy was less than 50 in 2000.</label></b>
 		<br/>done.<br/>
-		db.life_expectancies.find({$and :[{"dims.SEX": "Male"},{"Value" : {$lt : "50"}}]}).pretty() <br/>
+		db.life_expectancies.find({$and :[{"dims.YEAR": "2000"},{"dims.SEX": "Male"},{"Value" : {$lt : "50"}}]}).pretty() <br/>
 		
 		</p></li>
 		
 		
 		
 			
-		<li class="list-group-item"><p>
-			<label>life expectancy of Sri Lanka.</label></p><br/>
-		
-		
-		 <div class="container">
-		
-      <img src="https://i.ibb.co/mFqCTsj/srilanka-female.png" alt="srilanka-female" width = "80%" height="110" style="border:1px solid black">
-    </div>
-			
-			
-			<br/><br/>
-    <div class="container">
-      <img src="https://i.ibb.co/thhgTjd/srilanka-male.png" alt="male" width = "80%" height="110" style="border:1px solid black">
-    </div>
-   
-			<br/><br/>
-	<div class="container">
-	
-      <img src="https://i.ibb.co/vLnqWcn/srilanka-both.png" alt="srilanka-both"  width = "80%" height="110" style="border:1px solid black">
-    </div>
- 
-		</li>
-		
-		
-		
-		
-		
-		
-		
+				
 	
 	<li class="list-group-item"><p>
 		<label>What was the average life expectancy of SAARC(Afghanistan, Bangladesh, Bhutan, India, the Maldives, Nepal, Pakistan and Sri Lanka) countries by 2005.</label>
