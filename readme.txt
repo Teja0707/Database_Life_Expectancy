@@ -17,7 +17,7 @@ Step II. Installations :
 
 Step III. Get Data to database 
 
-1.Download "data.json" file
+1.Download "Data.json" file
 2.Use command "mongoimport --db dbName --collection collectionName --file fileName.json"
   to import data to local machine
 3.use command " echo 'mongod --nojournal' > mongod // to echo mongod
@@ -36,6 +36,7 @@ Step III. Get Data to database
 
 Step IV : Install dependencies
 
+1. To run the project certain dependencies need to be installed (APIs package.json file)  
 2. Run command "npm install" to install dependencies
 3. Run command "code ." to open project in visual studio
 4. Use command "cd Bioinformatics_Project" to get into the project directory
@@ -122,7 +123,7 @@ What is the life expectancy of India in the year 2015.
 db.life_expectancy.find({$and :[{"dims.COUNTRY":"India"},{"dims.YEAR":"2015"}]})
  
 
-Total number of records in the database
+Total number of records in the database.
 life_expectancies.find({}).count()
 
 
@@ -136,3 +137,29 @@ What are the countries whose male life expectancy was less than 50 in 2000.
 db.life_expectancies.find({$and :[{"dims.YEAR": "2000"},{"dims.SEX": "Male"},{"Value" : {$lt : "50"}}]}).pretty() 
 		
 --------------------------------------------------------------------------------------------------------
+
+Research Question: 
+The goal of this database is to analyze and infer whether the life expectancy of developed/developing countries is improving/deteriorating over the years. To achieve this, we compare life expectancy values of countries from years 2000-2016 among developed and developing countries. While comparing we consider life expectancies of both sexes- male and female together and also individually.
+
+Objectives: 
+•	Compare life expectancy values of both developed (USA, Canada, UK etc.) and developing (India, Pakistan, Bangladesh, etc.) countries from 2000-2016 and infer from data if life-expectancies are improving or deteriorating.
+
+•	Compare life expectancy of male and female (together and separately) and infer from data which sex has better life-expectancy across.
+
+-------------------------------------------------------------------------------------------------------
+
+Results : Open '"/landing" -> results' to view results
+
+Objective 1:
+•	As expected, developed countries had greater life expectancy values compared to developing countries. While Japan had an expectancy value for both sexes of 74.8 in 2016, India has 60 years. 
+
+•	All the developing countries had closer values ranging from 68-75 for both sexes, while developed countries had values ranging from 50 – 69. 
+
+
+•	From year 2000 – 2016, In the observed countries though most of the country’s life expectancy improved, expectancy deteriorated in middle eastern country like Syria from 63 in 2005 – 55 in 2016. Also, Iran’s life expectancy fluctuated between 59’s and 64’s.
+
+Objective 2:
+
+•	When expectancies were compared between male and female, we found that almost all the countries have greater life expectancies of female than male. It was seen on an average that women lived at least 2-5 years longer than men. This was an interesting find, from which we may infer that either women on an average have more healthier practices when compared to men or they have a good mental health.
+
+
