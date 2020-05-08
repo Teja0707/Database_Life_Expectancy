@@ -118,6 +118,15 @@ app.get("/life_expectancies", function(req,res){
 });
 
 
+// ------------------------Research work --------------------
+
+// Renders Results and analysis (Research)
+app.get("/results", function(req,res){
+	
+	res.render("results"); 
+});
+// ------------------------Research work --------------------
+
 app.post("/life_expectancies", function(req, res){
 	
 

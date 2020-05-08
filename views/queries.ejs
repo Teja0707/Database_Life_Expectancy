@@ -67,7 +67,7 @@
 		
 		<b><label>What are the countries whose male life expectancy was less than 25 in 2000.</label></b>
 		<br/>done.<br/>
-		db.life_expectancies.find({$and :[{"dims.SEX": "Male"},{"Value" : {$lt : "25"}}]}).pretty() <br/>
+		db.life_expectancies.find({$and :[{"dims.SEX": "Male"},{"Value" : {$lt : "50"}}]}).pretty() <br/>
 		
 		</p></li>
 		
