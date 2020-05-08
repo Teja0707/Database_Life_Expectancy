@@ -59,6 +59,8 @@ var life_expectancy_Schema = new mongoose.Schema(
 What's in files ?
 
 1. app.js : API calls, defines schema, defines routes, used to connect to server
+
+----- Views directory --------------
 2. "/life_expectancies" : Renders results for search
 3. "/landing" : Talks about research project, research question and results
 4. "/new" : Used to "Perfom Query" operations
@@ -72,6 +74,9 @@ dims: {
                         },
                Value: "53.0"
 To search value in perform query (/"new")
+----- Views directory --------------
+
+--------DB-------------------------
 
 5. Database : Bioinformatics_project
 	collection : life_expectancies
